@@ -25,16 +25,14 @@ function Item(props: ItemProps): React.ReactElement {
   }
 
   return (
-    <div id={props.counter.id} className="counter">
+    <div id={props.counter.id}>
       {props.counter.timer ? (
         <Timer
-          index={props.index}
           id={props.counter.id}
           body={props.counter.body}
         />
       ) : (
-        <div>
-          <h4 className="counter__title">Счётчик №{props.len - Math.floor(props.len / 4)}</h4>
+        <div className="counter">
           <div className="counter__content">
             <h3 className="counter__body">{state}</h3>
             <div className="counter__buttons">

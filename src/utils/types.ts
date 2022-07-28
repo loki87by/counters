@@ -6,12 +6,10 @@ export interface Counter {
 
 export interface ItemProps {
   counter: Counter;
-  index: number;
-  len: number;
 }
 
 export interface TimerProps extends Counter {
-  index: number
+  index?: number
 }
 
 export type IntervalFunction = () => ( unknown | void )

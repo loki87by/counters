@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../redux/store";
 import { addCounter } from "../../redux/countersReducer";
+import Header from '../Header/Header'
 import Item from '../Item/Item'
 import { Counter } from "../../utils/types";
 
@@ -9,7 +10,6 @@ function App(): React.ReactElement {
   const dispatch = useDispatch<AppDispatch>();
   const store = useSelector((state: RootState) => state);
   const counters = store.counters;
-  const len = counters.length
 
   function createCounter() {
     const startData = counters.map((item: Counter) => {
@@ -29,16 +29,14 @@ function App(): React.ReactElement {
 
   return (
     <>
-      <header>
-        <h1>Генератор счетчиков</h1>
-      </header>
+      <Header />
       <main>
         <button className="add" onClick={createCounter}>
           Создать счётчик
         </button>
         <section className="list">
-          {counters.map((counter, index) => (
-            <Item key={counter.id} counter={counter} index={index + 1} len={len} />
+          {counters.map((counter) => (
+            <Item key={counter.id} counter={counter} />
           ))}
         </section>
       </main>

@@ -40,7 +40,6 @@ function Timer(props: TimerProps): React.ReactElement {
 
   return (
     <div id={props.id} className="counter">
-      <h4 className="counter__title">Таймер №{props.index / 4}</h4>
       <h3 className="counter__body">{state}</h3>
     </div>
   );
