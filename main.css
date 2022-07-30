@@ -350,14 +350,61 @@ template {
   display: none;
 }
 
+:root {
+  --background: #f9eeb9;
+  --color: #190628;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--color);
+}
+
+button {
+  cursor: pointer;
+}
+
 header,
 footer {
   width: 100%;
   height: 10vh;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-align: center;
 }
 
-h1 {
+header {
+  border-bottom: 1px dashed var(--color);
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+}
+
+.Header__input-block {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.Header__input-block > label {
+  margin-right: 1em;
+}
+
+h1,
+h3,
+h4 {
   margin: 0;
 }
 
@@ -383,37 +430,136 @@ main {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  margin-bottom: 1em;
+  border-color: var(--color);
+  background-color: var(--background);
+  color: var(--color);
 }
 
 .list {
   width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  max-height: 70vh;
+  padding-top: 1px;
+  padding-bottom: 0.5em;
+  overflow: auto;
+  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, 100%));
   grid-row-gap: 1em;
   text-align: center;
 }
 
+.list-item {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .counter {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  height: 100%;
-  margin: auto;
-  border: 1px solid #000;
+  max-height: -webkit-max-content;
+  max-height: -moz-max-content;
+  max-height: max-content;
+  height: calc(100% - 2.4em);
+  margin: 0;
+  border: 1px solid var(--color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
+.counter__contextMenu {
+  position: absolute;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 3px 1em;
+  border: 1px solid var(--color);
+  cursor: pointer;
+  color: var(--color);
+  background-color: var(--background);
+}
+
+.counter__contextMenu > h4 {
+  border-bottom: 1px solid var(--color);
+}
+
+.counter__contextMenu > h4:last-of-type {
+  border-bottom: none;
+}
+
+.counter__contextMenu > h4:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-backdrop-filter: contrast(0.8);
+  backdrop-filter: contrast(0.8);
+}
+
+.counter__title {
+  height: 1.2em;
+  max-width: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding-bottom: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
 .counter__content {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .counter__body {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   margin: auto 1em;
   line-height: 1.5;
+}
+
+.counter__body_input {
+  width: 90%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .counter__buttons {
@@ -425,10 +571,34 @@ main {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  background-color: var(--background);
 }
 
 .counter__button {
   height: 50%;
   width: 100%;
+  border: 1px solid var(--color);
+  color: var(--color);
+  background-color: var(--background);
+}
+
+.counter__caption {
+  height: 1.1em;
+  font-size: 1em;
+  line-height: 1.1;
+}
+
+footer {
+  border-top: 1px dashed var(--color);
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+time,
+a,
+a:visited {
+  color: var(--color);
+  text-decoration: none;
 }
 
