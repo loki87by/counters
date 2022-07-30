@@ -25,11 +25,11 @@ function Timer(props: TimerProps): React.ReactElement {
 
     React.useEffect(() => {
       if (props.isTimerReset) {
-      setState(0)
-      props.setTimerReset(false)
+        setState(0);
+        props.setTimerReset(false);
       }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [props.isTimerReset])
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [props.isTimerReset]);
 
     React.useEffect(() => {
       function tick() {

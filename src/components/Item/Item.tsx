@@ -10,6 +10,7 @@ import Timer from "../Timer/Timer";
 
 function Item(props: ItemProps): React.ReactElement {
   const dispatch = useDispatch();
+  const maxNumber = 9007199254740990;
   const [state, setState] = React.useState(props.counter.body);
   const [title, setTitle] = React.useState(props.counter.title);
   const [caption, setCaption] = React.useState(props.counter.caption);
@@ -31,8 +32,14 @@ function Item(props: ItemProps): React.ReactElement {
     };
 
     if (arg) {
-      setState(state + 1);
-      obj.body = state + 1;
+      if (state < maxNumber) {
+        setState(state + 1);
+        obj.body = state + 1;
+      } else {
+        alert("9007199254740991 - максимально возможное допустимое значение");
+        setState(state);
+        obj.body = state;
+      }
     } else {
       setState(state - 1);
       obj.body = state - 1;
@@ -137,7 +144,11 @@ function Item(props: ItemProps): React.ReactElement {
   }
 
   function editInputValue(e: React.KeyboardEvent<HTMLInputElement>) {
-    const newValue = (e.target as HTMLInputElement).value;
+    let newValue = (e.target as HTMLInputElement).value;
+
+    if (newValue.length > 15) {
+      newValue = newValue.slice(0, 15);
+    }
     setCurrentInputValue(newValue);
   }
 
@@ -222,7 +233,6 @@ function Item(props: ItemProps): React.ReactElement {
                   type="number"
                   value={currentInputValue}
                   placeholder=""
-                  maxLength={10}
                   onInput={editInputValue}
                   onKeyPress={handlePressEnter}
                   autoFocus={true}

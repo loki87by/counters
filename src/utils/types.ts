@@ -16,10 +16,10 @@ export interface ItemProps {
 }
 
 export interface TimerProps {
-  counter: Counter
+  counter: Counter;
   id: string;
-  index?: number
-  isTimerReset: boolean
+  index?: number;
+  isTimerReset: boolean;
   setTimerReset: Dispatch<SetStateAction<boolean>>;
 }
 
@@ -27,4 +27,4 @@ export interface StringifyData {
   [key: string]: string;
 }
 
-export type IntervalFunction = () => ( unknown | void )
+export type IntervalFunction = () => unknown | void;

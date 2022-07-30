@@ -1,8 +1,8 @@
 import React from "react";
 
 function Header(): React.ReactElement {
-  const [backgroundColor, setBackgroundColor] = React.useState("#ffffff");
-  const [mainColor, setMainColor] = React.useState("#000000");
+  const [backgroundColor, setBackgroundColor] = React.useState("#f9eeb9");
+  const [mainColor, setMainColor] = React.useState("#190628");
 
   function updateColors(e: React.ChangeEvent<HTMLInputElement>, arg: string) {
     const color = e.target.value;

@@ -18,20 +18,33 @@ header,
 footer {
   width: 100%;
   height: 10vh;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   text-align: center;
 }
 
 header {
   border-bottom: 1px dashed var(--color);
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
 }
 
 .Header__input-block {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -75,11 +88,14 @@ main {
 
 .list {
   width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
   max-height: 70vh;
   padding-top: 1px;
   padding-bottom: 0.5em;
   overflow: auto;
+  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, 100%));
   grid-row-gap: 1em;
@@ -88,9 +104,18 @@ main {
 
 .list-item {
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -98,6 +123,8 @@ main {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  max-height: -webkit-max-content;
+  max-height: -moz-max-content;
   max-height: max-content;
   height: calc(100% - 2.4em);
   margin: 0;
@@ -131,16 +158,25 @@ main {
 }
 
 .counter__contextMenu > h4:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
   transform: scale(1.1);
+  -webkit-backdrop-filter: contrast(0.8);
   backdrop-filter: contrast(0.8);
 }
 
 .counter__title {
   height: 1.2em;
   max-width: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   padding-bottom: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
   font-size: 1.2em;
   line-height: 1;
@@ -154,6 +190,8 @@ main {
 }
 
 .counter__body {
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
   margin: auto 1em;
   line-height: 1.5;
@@ -162,8 +200,15 @@ main {
 .counter__body_input {
   width: 90%;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -195,6 +240,8 @@ main {
 
 footer {
   border-top: 1px dashed var(--color);
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
