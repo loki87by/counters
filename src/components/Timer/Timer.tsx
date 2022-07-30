@@ -5,7 +5,7 @@ import { TimerProps, IntervalFunction } from "../../utils/types";
 
 function Timer(props: TimerProps): React.ReactElement {
   const dispatch = useDispatch();
-  const [state, setState] = React.useState(props.body);
+  const [state, setState] = React.useState(props.counter.body);
 
   const UpdateCounterData = React.useCallback(() => {
     const obj = {
@@ -22,6 +22,14 @@ function Timer(props: TimerProps): React.ReactElement {
     React.useEffect(() => {
       savedCallback.current = callback;
     });
+
+    React.useEffect(() => {
+      if (props.isTimerReset) {
+      setState(0)
+      props.setTimerReset(false)
+      }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [props.isTimerReset])
 
     React.useEffect(() => {
       function tick() {

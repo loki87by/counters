@@ -7,6 +7,7 @@ import Item from '../Item/Item'
 import { Counter } from "../../utils/types";
 
 function App(): React.ReactElement {
+  const [contextMenuId, setContextMenuId] = React.useState('');
   const dispatch = useDispatch<AppDispatch>();
   const store = useSelector((state: RootState) => state);
   const counters = store.counters;
@@ -18,7 +19,9 @@ function App(): React.ReactElement {
     const counter = {
       id: "",
       body: startData,
-      timer: false
+      timer: false,
+  title: undefined,
+  caption: undefined
     };
 
     if ((counters.length + 1) % 4 === 0) {
@@ -36,13 +39,13 @@ function App(): React.ReactElement {
         </button>
         <section className="list">
           {counters.map((counter) => (
-            <Item key={counter.id} counter={counter} />
+            <Item key={counter.id} id={counter.id} counter={counter} contextMenuId={contextMenuId} setContextMenuId={setContextMenuId}/>
           ))}
         </section>
       </main>
       <footer>
         <time>2022</time>
-        <a href="" target="_blank">
+        <a href="https://github.com/loki87by" target="_blank" rel="noreferrer">
           © Алексей Акулич
         </a>
       </footer>

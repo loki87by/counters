@@ -1,8 +1,8 @@
 @import url("./normalize.css");
 
 :root {
-  --background: #fff;
-  --color: #000;
+  --background: #f9eeb9;
+  --color: #190628;
 }
 
 body {
@@ -18,12 +18,14 @@ header,
 footer {
   width: 100%;
   height: 10vh;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   text-align: center;
 }
 
 header {
+  border-bottom: 1px dashed var(--color);
   justify-content: space-evenly;
 }
 
@@ -37,7 +39,9 @@ header {
   margin-right: 1em;
 }
 
-h1 {
+h1,
+h3,
+h4 {
   margin: 0;
 }
 
@@ -63,6 +67,7 @@ main {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  margin-bottom: 1em;
   border-color: var(--color);
   background-color: var(--background);
   color: var(--color);
@@ -70,33 +75,96 @@ main {
 
 .list {
   width: 100%;
+  height: max-content;
+  max-height: 70vh;
+  padding-top: 1px;
+  padding-bottom: 0.5em;
+  overflow: auto;
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, 100%));
   grid-row-gap: 1em;
   text-align: center;
 }
 
+.list-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .counter {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  height: 100%;
-  margin: auto;
+  max-height: max-content;
+  height: calc(100% - 2.4em);
+  margin: 0;
   border: 1px solid var(--color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
+.counter__contextMenu {
+  position: absolute;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 3px 1em;
+  border: 1px solid var(--color);
+  cursor: pointer;
+  color: var(--color);
+  background-color: var(--background);
+}
+
+.counter__contextMenu > h4 {
+  border-bottom: 1px solid var(--color);
+}
+
+.counter__contextMenu > h4:last-of-type {
+  border-bottom: none;
+}
+
+.counter__contextMenu > h4:hover {
+  transform: scale(1.1);
+  backdrop-filter: contrast(0.8);
+}
+
+.counter__title {
+  height: 1.2em;
+  max-width: 100%;
+  width: max-content;
+  padding-bottom: 1px;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
 .counter__content {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .counter__body {
+  height: max-content;
   margin: auto 1em;
   line-height: 1.5;
+}
+
+.counter__body_input {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .counter__buttons {
@@ -114,12 +182,19 @@ main {
 .counter__button {
   height: 50%;
   width: 100%;
-  border-color: var(--color);
+  border: 1px solid var(--color);
   color: var(--color);
   background-color: var(--background);
 }
 
+.counter__caption {
+  height: 1.1em;
+  font-size: 1em;
+  line-height: 1.1;
+}
+
 footer {
+  border-top: 1px dashed var(--color);
   justify-content: center;
 }
 
